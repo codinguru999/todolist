@@ -29,7 +29,7 @@ function logincheck(){
         // alert(ob)
         if (ob[InputEmail1]){
             if(ob[InputEmail1]==InputPassword1){
-                window.open('https://127.0.0.1:5500/todo.html', '_parent');
+                window.open('https://codinguru999.github.io/todolist/todo.html?', '_parent');
                 // alert('welcome sir')
                 // window.close('index.html')
                 localStorage.setItem('item',InputEmail1)

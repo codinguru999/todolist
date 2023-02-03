@@ -29,7 +29,7 @@ function logincheck(){
         // alert(ob)
         if (ob[InputEmail1]){
             if(ob[InputEmail1]==InputPassword1){
-                window.open('todo.html', '_parent');
+                window.open('todo.html');
                 // alert('welcome sir')
                 // window.close('index.html')
                 localStorage.setItem('item',InputEmail1)

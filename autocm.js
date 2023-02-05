@@ -16,8 +16,11 @@ x.addEventListener("input", function () {
               
               let di=document.createElement('div')
               di.classList.add('container-fluid')
+              di.classList.add('autoselct')
               di.classList.add('d-block')
-              di.classList.add('bg-primary-subtle')
+              di.classList.add('rounded-pill')
+              di.classList.add('bg-info-subtle')
+            //   di.classList.add('px-auto')
               di.innerHTML=x;
               y.appendChild(di)
             }
@@ -58,4 +61,11 @@ function appendlist(val) {
 //   for (const x of autolist) {
 //     alert(x);
 //   }
+}
+function setfocus(event){
+    if(event.keyCode==40){
+        document.getElementById('show').firstChild.focus()
+        document.getElementById('show').firstChild.classList.remove('bg-info-subtle')
+        document.getElementById('show').firstChild.classList.add('bg-primary')
+    }
 }

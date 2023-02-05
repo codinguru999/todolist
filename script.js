@@ -74,6 +74,7 @@ window.onload = function () {
 function keypressed(event) {
   if (event.keyCode == 13) {
     getTask();
+    document.getElementById('show').classList.add('d-none')
 }
 }
 function getTask() {

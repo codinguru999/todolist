@@ -5,13 +5,15 @@
 // }
 // document.getElementById("btn").onclick=getTask;
 // import {mssg} from "./login.js";
-
+// setInterval(function(){alert('hi')},20000)
 // console.log(mssg);
 var users=localStorage.getItem('item')
 // alert(users)
 // localStorage.setItem('item','')
 window.onload = function () {
     // alert('hi')
+    // he()
+    document.getElementById('show').innerHTML=''
     let obj = localStorage.getItem(users)
     // alert('hi')
     if (obj == null) {
@@ -53,6 +55,7 @@ window.onload = function () {
 }
 function keypressed(event) {
     if (event.keyCode == 13) {
+        appendlist()
         getTask()
     }
 }

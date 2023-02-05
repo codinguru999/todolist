@@ -29,12 +29,10 @@ function logincheck(){
         // alert(ob)
         if (ob[InputEmail1]){
             if(ob[InputEmail1]==InputPassword1){
-                window.open('todo.html');
-                // alert('welcome sir')
-                // window.close('index.html')
+                open('todo.html','./chromeTab');
+                // setTimeout(history.back(),5000)
+                
                 localStorage.setItem('item',InputEmail1)
-                // document.getElementById('website').src="https://127.0.0.1:5500/todo.html";
-                // alert(window.open('todo.html'))
             }
             else{
                 alert("Wrong Password")

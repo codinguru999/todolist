@@ -21,16 +21,18 @@
     <h2 class="ms-5 ps-4">Manage Your Todo List</h2>
     <div
     class="container d-flex flex-column justify-content-center align-items-center bg-body-tertiary rounded shadow vh-75" style="height: 500px;">
-    <div class="container d-flex flex-row justify-content-center align-items-center mt-2 position-sticky">
-        <input type="text" id="name" autocomplete="off" onkeydown="keypressed(event)" placeholder='Enter your task' class="input w-50 p-1 border border-primary px-3 rounded-pill" />
+    <div class="container d-flex flex-row justify-content-center align-items-center mt-2 position-sticky z-3">
+        <div class="container d-flex flex-column mx-0 w-50 position-relative z-3">
+            <input type="text" id="name" class="'autocpt" autocomplete="off" onkeydown="keypressed(event)" placeholder='Enter your task' class="input w-100 p-1 border border-primary px-3 rounded-pill" />
+            <div id="show" class="w-25 bg-danger-subtle my-5 d-none position-absolute" style="height: fit-content; z-index: 99 !important;"></div>
+        </div>
         <button class="btn btn-success m-1 p-1 px-2" title="Add Task" onclick="getTask()"><i class="fa-solid fa-plus"></i></button>
         <button class="btn btn-danger m-1 p-1 px-2" title="Delete All Tasks" onclick="deleteTask()"><i class="fa-solid fa-trash"></i></button>
         <button class="btn btn-danger m-1 p-1 px-2 d-none"  title="Delete Selected Tasks" id="multipledel" onclick="deletemutiple()"><i class="fa-solid fa-trash-can-arrow-up"></i></button>
     </div>
-    <div id="show" class="container w-25 bg-white d-none z-3 position-absolute" style=" height: 248px;"></div>
     <span id="error"></span>
-    <div class="container-fluid overflow-auto">
-        <ul id="list" class="list-group my-4" >
+    <div class="container-fluid overflow-auto z-0">
+        <ul id="list" class="list-group my-4 z-0" >
         </ul>
     </div>
 </div>

@@ -23,8 +23,8 @@
     class="container d-flex flex-column justify-content-center align-items-center bg-body-tertiary rounded shadow vh-75" style="height: 500px;">
     <div class="container d-flex flex-row justify-content-center align-items-center mt-2 position-sticky z-3">
         <div class="container d-flex flex-column mx-0 w-50 position-relative z-3">
-            <input type="text" id="name" autocomplete="off" onkeydown="keypressed(event);setfocus(event)" placeholder='Enter your task' class="input w-100 p-1 border border-primary px-3 rounded-pill" />
-            <div id="show" class="w-25 p-1 d-none position-absolute" style="height: fit-content; z-index: 99 !important; margin-top: 34px; margin-left: 9px;"></div>
+            <input type="text" id="name" autocomplete="off" onkeydown="keypressed(event);setfocus(event)" placeholder='Enter your task' class="input w-100 p-1 border border-primary px-3 rounded" />
+            <div id="show" class="w-100 p-1 px-3 d-none position-absolute" style="height: fit-content; z-index: 99 !important; margin-top: 34px;margin-left:-12px"></div>
         </div>
         <button class="btn btn-success m-1 p-1 px-2" title="Add Task" onclick="getTask()"><i class="fa-solid fa-plus"></i></button>
         <button class="btn btn-danger m-1 p-1 px-2" title="Delete All Tasks" onclick="deleteTask()"><i class="fa-solid fa-trash"></i></button>

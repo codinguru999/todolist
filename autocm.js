@@ -2,8 +2,9 @@
 // document.getElementById('autolist').innerHTM
 
 let x = document.getElementById("name");
-let y = document.getElementById("show");
+var y = document.getElementById("show");
 x.addEventListener("input", function () {
+  window.point=0;
   //   y.innerHTML = 'hell[0]';
   if(x.value!=''){
 
@@ -18,7 +19,7 @@ x.addEventListener("input", function () {
               di.classList.add('container-fluid')
               di.classList.add('autoselct')
               di.classList.add('d-block')
-              di.classList.add('rounded-pill')
+              di.classList.add('rounded')
               di.classList.add('bg-info-subtle')
             //   di.classList.add('px-auto')
               di.innerHTML=x;
@@ -60,12 +61,83 @@ function appendlist(val) {
   }
 //   for (const x of autolist) {
 //     alert(x);
-//   }
 }
+//   }
+
 function setfocus(event){
+  let val=document.getElementById('name')
     if(event.keyCode==40){
-        document.getElementById('show').firstChild.focus()
-        document.getElementById('show').firstChild.classList.remove('bg-info-subtle')
-        document.getElementById('show').firstChild.classList.add('bg-primary')
+      if(val.value!=''){
+
+        // document.getElementById('show').firstChild.focus()
+        // document.getElementById('show').firstChild.classList.remove('bg-info-subtle')
+        // document.getElementById('show').firstChild.classList.add('bg-primary')
+        let x=document.getElementById('show').childNodes
+        if (window.point==x.length){
+          x[window.point-1].classList.add('bg-info-subtle')
+          x[window.point-1].classList.remove('bg-primary-subtle')
+          window.point=0
+          x[window.point].classList.remove('bg-info-subtle')
+          x[window.point].classList.add('bg-primary-subtle')
+          val.value=x[window.point].innerHTML
+          
+          window.point++
+        }
+        else{
+          if(window.point==0){
+            x[window.point].classList.remove('bg-info-subtle')
+            x[window.point].classList.add('bg-primary-subtle')
+            val.value=x[window.point].innerHTML
+            
+          }
+          else{
+            
+            x[window.point-1].classList.add('bg-info-subtle')
+            x[window.point-1].classList.remove('bg-primary-subtle')
+            x[window.point].classList.remove('bg-info-subtle')
+            x[window.point].classList.add('bg-primary-subtle')
+            // alert(x[window.poisnt].innerHTML)
+            val.value=x[window.point].innerHTML
+          }
+          
+          // alert(x[window.point].innerHTML)
+          window.point++;
+          
+        }
+      }
     }
+    else if(event.keyCode==38){
+      // document.getElementById('show').firstChild.focus()
+      // document.getElementById('show').firstChild.classList.remove('bg-info-subtle')
+      // document.getElementById('show').firstChild.classList.add('bg-primary')
+      let x=document.getElementById('show').childNodes
+      if (window.point==0){
+        if(x[window.point].className=='bg-primary-subtle'){
+          x[window.point].classList.remove('bg-primary-subtle')
+          x[window.point].classList.add('bg-info-subtle')
+          window.point=x.length-1
+          x[window.point].classList.remove('bg-info-subtle')
+          x[window.point].classList.add('bg-primary-subtle')
+          val.value=x[window.point].innerHTML
+        }
+        else{
+          
+          x[window.point].classList.remove('bg-primary-subtle')
+          x[window.point].classList.add('bg-info-subtle')
+          window.point=x.length-1
+          x[window.point].classList.remove('bg-info-subtle')
+          x[window.point].classList.add('bg-primary-subtle')
+          val.value=x[window.point].innerHTML
+        }
+      }
+      else{
+        x[window.point].classList.remove('bg-primary-subtle')
+        x[window.point].classList.add('bg-info-subtle')
+        window.point--
+        x[window.point].classList.remove('bg-info-subtle')
+        x[window.point].classList.add('bg-primary-subtle')
+        val.value=x[window.point].innerHTML
+      }
+        
+  }
 }
